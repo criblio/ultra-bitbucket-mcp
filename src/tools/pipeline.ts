@@ -12,8 +12,8 @@ import { z } from "zod";
 
 import type { HttpClient } from "../auth/bitbucket-client.js";
 import { filterLog } from "../core/pipeline/log-filter.js";
-import type { ConsolidatedToolDef, DispatcherContext, ToolAction } from "@scottlepp/mcp-toolkit/tool";
-import { nonNegativeInt, positiveInt } from "@scottlepp/mcp-toolkit/schemas";
+import type { ConsolidatedToolDef, DispatcherContext, ToolAction } from "ultra-mcp-toolkit/tool";
+import { nonNegativeInt, positiveInt } from "ultra-mcp-toolkit/schemas";
 
 // Common identifying fields.
 const repoTarget = {

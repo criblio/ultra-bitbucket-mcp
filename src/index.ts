@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// @scottlepper/ultra-bitbucket-mcp — token-efficient MCP server for Bitbucket Cloud.
+// ultra-bitbucket-mcp — token-efficient MCP server for Bitbucket Cloud.
 //
 // Two runtime modes (BITBUCKET_TOOL_MODE):
 //   - classic   (default): expose ~8 consolidated MCP tools backed
@@ -18,8 +18,8 @@ import {
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
 
-import { createSandbox } from "@scottlepp/mcp-toolkit/sandbox";
-import { startStdioServer } from "@scottlepp/mcp-toolkit/stdio";
+import { createSandbox } from "ultra-mcp-toolkit/sandbox";
+import { startStdioServer } from "ultra-mcp-toolkit/stdio";
 
 import { createBitbucketClient } from "./auth/bitbucket-client.js";
 import { getConfig, type BitbucketConfig } from "./config.js";
@@ -30,7 +30,7 @@ import {
   dispatch,
   type ConsolidatedToolDef,
   type DispatcherContext,
-} from "@scottlepp/mcp-toolkit/tool";
+} from "ultra-mcp-toolkit/tool";
 import { branchingTool } from "./tools/branching.js";
 import { commitTool } from "./tools/commit.js";
 import { createDiffTool, type CustomToolDef } from "./tools/diff.js";

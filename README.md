@@ -4,7 +4,7 @@ Token-efficient MCP server for Bitbucket Cloud. Eight consolidated tools, a
 handle-based diff workflow, and per-extension line caps that let an agent
 review a 75 KB PR in a few hundred tokens of context.
 
-Built on [`@scottlepp/mcp-toolkit`](https://github.com/scottlepp/mcp-toolkit).
+Built on [`ultra-mcp-toolkit`](https://github.com/criblio/ultra-mcp-toolkit).
 
 ## Why
 
@@ -34,10 +34,10 @@ This server fixes that:
 ## Install
 
 ```bash
-npm install -g @scottlepper/ultra-bitbucket-mcp
+npm install -g ultra-bitbucket-mcp
 ```
 
-Or run on-demand via `npx @scottlepper/ultra-bitbucket-mcp`.
+Or run on-demand via `npx ultra-bitbucket-mcp`.
 
 ## Configure
 
@@ -81,7 +81,7 @@ automatically.
   "mcpServers": {
     "bitbucket": {
       "command": "npx",
-      "args": ["-y", "@scottlepper/ultra-bitbucket-mcp"],
+      "args": ["-y", "ultra-bitbucket-mcp"],
       "env": {
         "BITBUCKET_WORKSPACE": "my-team",
         "BITBUCKET_API_TOKEN": "…"
@@ -98,7 +98,7 @@ patterns (handle-based diffs, BBQL `q` filters, the `list_pending_review`
 shortcut). Install it into `~/.claude/skills/`:
 
 ```bash
-npm exec --package=@scottlepper/ultra-bitbucket-mcp -- install-skill
+npm exec --package=ultra-bitbucket-mcp -- install-skill
 # or, from a checkout / global install:
 npm run install-skill
 ```

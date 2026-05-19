@@ -9,7 +9,7 @@ description: >-
 ---
 # ultra-bitbucket-mcp — dev skill
 
-You are working **on** the `@scottlepper/ultra-bitbucket-mcp` server, not
+You are working **on** the `ultra-bitbucket-mcp` server, not
 **with** it. This skill orients you to the codebase and its conventions.
 
 ## Three layers
@@ -44,7 +44,7 @@ REST endpoint we expose. Each entry is an `op({...})` with:
 - `params` — array of `{name, role: "path" | "query" | "body", required?, description?}`
 - `trim` — string key into `trimRegistry` (compile-time-checked at module load)
 
-The dispatcher (`@scottlepp/mcp-toolkit`'s `invokeOperation`) consumes the
+The dispatcher (`ultra-mcp-toolkit`'s `invokeOperation`) consumes the
 manifest, walks `params`, builds the URL + body, calls the HTTP client,
 runs the trim, and returns the projection. Tools never call `client.get`
 directly except in the diff/pipeline custom handlers.

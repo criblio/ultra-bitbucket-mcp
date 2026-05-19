@@ -4,10 +4,10 @@
 
 import { z } from "zod";
 
-import { invokeOperation } from "@scottlepp/mcp-toolkit/manifest";
+import { invokeOperation } from "ultra-mcp-toolkit/manifest";
 
-import type { ConsolidatedToolDef, DispatcherContext } from "@scottlepp/mcp-toolkit/tool";
-import { positiveInt } from "@scottlepp/mcp-toolkit/schemas";
+import type { ConsolidatedToolDef, DispatcherContext } from "ultra-mcp-toolkit/tool";
+import { positiveInt } from "ultra-mcp-toolkit/schemas";
 
 const GetSchema = z.object({
   workspace: z.string().optional(),

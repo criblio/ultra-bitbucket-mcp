@@ -10,12 +10,12 @@ import {
   createHttpClient,
   HttpClientError,
   type HttpClient,
-} from "@scottlepp/mcp-toolkit/http-client";
+} from "ultra-mcp-toolkit/http-client";
 
 import type { BitbucketAuth } from "../config.js";
 
 const DEFAULT_API_BASE = "https://api.bitbucket.org/2.0";
-const DEFAULT_USER_AGENT = "scottlepp-ultra-bitbucket-mcp/0.1";
+const DEFAULT_USER_AGENT = "ultra-bitbucket-mcp/0.1";
 
 export interface BitbucketClientOpts {
   auth: BitbucketAuth;
@@ -42,7 +42,7 @@ export function createBitbucketClient(opts: BitbucketClientOpts): HttpClient {
 
 // Re-export so callers can `import { HttpClient } from "../auth/bitbucket-client.js"`
 // instead of pulling from the SDK directly.
-export type { HttpClient } from "@scottlepp/mcp-toolkit/http-client";
+export type { HttpClient } from "ultra-mcp-toolkit/http-client";
 
 // Backwards-compatible alias for the old class-based error name. The
 // SDK's HttpClientError carries the same shape (statusCode, response).

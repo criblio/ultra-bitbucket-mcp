@@ -5,8 +5,8 @@
 
 import { z } from "zod";
 
-import type { ConsolidatedToolDef } from "@scottlepp/mcp-toolkit/tool";
-import { positiveInt } from "@scottlepp/mcp-toolkit/schemas";
+import type { ConsolidatedToolDef } from "ultra-mcp-toolkit/tool";
+import { positiveInt } from "ultra-mcp-toolkit/schemas";
 
 const ListSchema = z.object({
   q: z

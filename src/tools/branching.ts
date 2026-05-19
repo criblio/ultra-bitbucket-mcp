@@ -10,7 +10,7 @@
 
 import { z } from "zod";
 
-import type { ConsolidatedToolDef } from "@scottlepp/mcp-toolkit/tool";
+import type { ConsolidatedToolDef } from "ultra-mcp-toolkit/tool";
 
 const repoTarget = {
   workspace: z.string().optional(),
