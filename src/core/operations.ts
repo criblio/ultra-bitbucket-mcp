@@ -9,7 +9,7 @@
 // Phase 1 scope: pullrequest.get/list + repository.get/list. Phase 3
 // extends this to the full surface.
 
-import type { Manifest, Operation } from "@scottlepp/mcp-toolkit/manifest";
+import type { Manifest, Operation } from "ultra-mcp-toolkit/manifest";
 import type { TrimKey } from "./trim-registry.js";
 
 // Helper to keep operation declarations terse while still type-checking

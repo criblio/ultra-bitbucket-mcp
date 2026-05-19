@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { extractPathParams } from "@scottlepp/mcp-toolkit/manifest";
+import { extractPathParams } from "ultra-mcp-toolkit/manifest";
 
 import { operations } from "./operations.js";
 import { trimRegistry } from "./trim-registry.js";

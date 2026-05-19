@@ -4,7 +4,7 @@ Guidance for Claude Code working inside this repo.
 
 ## What this repo is
 
-`@scottlepper/ultra-bitbucket-mcp` — a token-efficient MCP server for Bitbucket
+`ultra-bitbucket-mcp` — a token-efficient MCP server for Bitbucket
 Cloud. The product thesis: agents should be able to review a 75 KB PR diff in
 a few hundred tokens of context, by drilling into a server-side handle instead
 of reading raw bytes.

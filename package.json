@@ -1,5 +1,5 @@
 {
-  "name": "@scottlepper/ultra-bitbucket-mcp",
+  "name": "ultra-bitbucket-mcp",
   "version": "0.2.0",
   "description": "Token-efficient MCP server for Bitbucket Cloud. Handle-based diffs, consolidated tools, code-api mode.",
   "type": "module",
@@ -39,7 +39,7 @@
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
-    "@scottlepp/mcp-toolkit": "^0.5.0",
+    "ultra-mcp-toolkit": "github:criblio/ultra-mcp-toolkit",
     "dotenv": "^17.4.2",
     "minimatch": "^10.2.5",
     "undici": "^6.25.0",

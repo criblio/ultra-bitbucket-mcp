@@ -18,8 +18,8 @@ import { createDiffCache, encodeHandle, decodeHandle, type DiffHandle, type Diff
 import { applyExcludes } from "../core/diff/excludes.js";
 import { getFileFromDiff, getFilesByGlob, grepDiff } from "../core/diff/drill-ins.js";
 import type { FileTreeNode, ParsedDiff } from "../core/diff/types.js";
-import { mergeActionSchemas } from "@scottlepp/mcp-toolkit/tool";
-import { positiveInt, nonNegativeInt } from "@scottlepp/mcp-toolkit/schemas";
+import { mergeActionSchemas } from "ultra-mcp-toolkit/tool";
+import { positiveInt, nonNegativeInt } from "ultra-mcp-toolkit/schemas";
 
 // --- Tool definition --------------------------------------------------
 

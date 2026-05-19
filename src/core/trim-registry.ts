@@ -5,7 +5,7 @@
 // adding new ops; the manifest test verifies every `op.trim` value
 // exists in this registry.
 
-import { createTrimRegistry, type TrimFn } from "@scottlepp/mcp-toolkit/trim-registry";
+import { createTrimRegistry, type TrimFn } from "ultra-mcp-toolkit/trim-registry";
 
 import {
   accountListSummary,

@@ -7,7 +7,7 @@
 // loud, not silent.
 
 import { config as loadDotenv } from "dotenv";
-import { parseToolFilterEnv, parseToolMode, type ToolFilterConfig, type ToolMode } from "@scottlepp/mcp-toolkit/config";
+import { parseToolFilterEnv, parseToolMode, type ToolFilterConfig, type ToolMode } from "ultra-mcp-toolkit/config";
 
 // Priority: .env.local > .env (later calls override earlier).
 // `quiet: true` keeps the CLI's stderr reserved for actual errors.

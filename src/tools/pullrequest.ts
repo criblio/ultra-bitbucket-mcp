@@ -9,8 +9,8 @@
 
 import { z } from "zod";
 
-import type { ConsolidatedToolDef, DispatcherContext } from "@scottlepp/mcp-toolkit/tool";
-import { positiveInt } from "@scottlepp/mcp-toolkit/schemas";
+import type { ConsolidatedToolDef, DispatcherContext } from "ultra-mcp-toolkit/tool";
+import { positiveInt } from "ultra-mcp-toolkit/schemas";
 
 // Common identifying fields shared across read + write actions on a
 // specific PR. Composed via z.object spread to keep each per-action
@@ -358,7 +358,7 @@ const ListPendingReviewSchema = z.object({
   pagelen: positiveInt.pipe(z.number().max(50)).optional(),
 });
 
-import { invokeOperation } from "@scottlepp/mcp-toolkit/manifest";
+import { invokeOperation } from "ultra-mcp-toolkit/manifest";
 
 const listPendingReviewHandler = async (
   args: Record<string, unknown>,

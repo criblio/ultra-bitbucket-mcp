@@ -15,7 +15,7 @@ import {
   BodyCacheTooLargeError,
   createPageCache,
   type PageCacheInstance,
-} from "@scottlepp/mcp-toolkit/page-cache";
+} from "ultra-mcp-toolkit/page-cache";
 
 import { parseUnifiedDiff } from "./parser.js";
 import type { ParsedDiff } from "./types.js";

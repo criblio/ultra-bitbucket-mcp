@@ -5,8 +5,8 @@
 // allowlist-style projections — drop links, avatars, deeply-nested
 // repository duplicates, rendered.html duplicates of raw markdown.
 
-import { paginatedListSummary, pick } from "@scottlepp/mcp-toolkit/trim";
-import { createMutationAck } from "@scottlepp/mcp-toolkit/mutation-ack";
+import { paginatedListSummary, pick } from "ultra-mcp-toolkit/trim";
+import { createMutationAck } from "ultra-mcp-toolkit/mutation-ack";
 
 import type {
   BitbucketAccount,
