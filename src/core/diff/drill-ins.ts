@@ -5,6 +5,7 @@
 // already-shaped output.
 
 import { minimatch } from "minimatch";
+import RE2 from "re2";
 
 import type { Hunk, ParsedDiff, ParsedFile } from "./types.js";
 
@@ -245,26 +246,29 @@ export function grepDiff(
 }
 
 // Decide whether `pattern` should be interpreted as a regex or
-// literal. Tries to compile as a RegExp; on failure, falls back to
+// literal. Tries to compile as RE2; on failure, falls back to
 // substring matching. `/.../flags` syntax is also recognized.
+// Uses RE2 for guaranteed O(n) matching - no ReDoS possible.
 function compileMatcher(pattern: string): (line: string) => boolean {
-  // Explicit `/.../flags` form.
   const slashForm = pattern.match(/^\/(.+)\/([gimsuy]*)$/);
   if (slashForm) {
+    const regexBody = slashForm[1];
+    const flags = slashForm[2];
     try {
-      const re = new RegExp(slashForm[1], slashForm[2]);
+      const re = new RE2(regexBody, flags);
       return (line) => re.test(line);
     } catch {
-      // Fall through to literal.
+      // RE2 doesn't support some JS regex features - fall back to literal
+      return (line) => line.includes(regexBody);
     }
   }
-  // Anything containing regex metacharacters: try compile.
   if (/[\\^$.*+?()[\]{}|]/.test(pattern)) {
     try {
-      const re = new RegExp(pattern);
+      const re = new RE2(pattern, "i");
       return (line) => re.test(line);
     } catch {
-      // Fall through to literal.
+      // Fall back to literal substring match
+      return (line) => line.includes(pattern);
     }
   }
   // Literal substring match.

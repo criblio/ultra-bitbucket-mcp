@@ -10,6 +10,8 @@
 // (errors-first so the grep window operates on the same shape the
 // user sees; tail last so it caps total returned lines.)
 
+import RE2 from "re2";
+
 // --- Error heuristics -------------------------------------------------
 
 // Patterns that flag a line as an "error" candidate. Conservative on
@@ -41,24 +43,29 @@ function isErrorLine(line: string): boolean {
 
 // Parse a pattern that's either a literal substring, a bare regex, or
 // `/pattern/flags`. Same syntax as bitbucket_diff grep.
-function compilePattern(pattern: string): RegExp {
+// Uses RE2 for guaranteed O(n) matching - no ReDoS possible.
+function compilePattern(pattern: string): RE2 {
   const slashForm = /^\/(.+)\/([gimsuy]*)$/;
   const m = pattern.match(slashForm);
   if (m) {
-    return new RegExp(m[1], m[2] || "i");
+    const regexBody = m[1];
+    const flags = m[2] || "i";
+    try {
+      return new RE2(regexBody, flags);
+    } catch {
+      // RE2 doesn't support some JS regex features - fall back to escaped literal
+      return new RE2(escapeRegex(regexBody), flags);
+    }
   }
-  // Treat anything containing regex metacharacters as a regex, else
-  // literal substring (escape for safety).
   const hasMetacharacter = /[.*+?^$|()[\]{}\\]/.test(pattern);
   if (hasMetacharacter) {
     try {
-      return new RegExp(pattern, "i");
+      return new RE2(pattern, "i");
     } catch {
-      // Bad regex → fall back to literal escape.
-      return new RegExp(escapeRegex(pattern), "i");
+      return new RE2(escapeRegex(pattern), "i");
     }
   }
-  return new RegExp(escapeRegex(pattern), "i");
+  return new RE2(escapeRegex(pattern), "i");
 }
 
 function escapeRegex(s: string): string {
