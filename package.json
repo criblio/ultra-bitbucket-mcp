@@ -39,9 +39,10 @@
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
-    "ultra-mcp-toolkit": "github:criblio/ultra-mcp-toolkit",
     "dotenv": "^17.4.2",
     "minimatch": "^10.2.5",
+    "re2": "^1.24.1",
+    "ultra-mcp-toolkit": "github:criblio/ultra-mcp-toolkit#fd075e2d66c7b98583a72fc507e1d2b82ae0fd25",
     "undici": "^6.25.0",
     "zod": "^4.4.3"
   },
